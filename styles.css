@@ -2,127 +2,131 @@ body {
     background-color: #202020;
 }
 
-#introContainer {
-    background-color: #fff;
-    width: 520px;
-    height: 480px;
-    
-    position: absolute;
-    top:0;
+#builtWithContainer {
+    position: fixed;
     bottom: 0;
-    left: 0;
     right: 0;
-
-    margin: auto;
-    border: 1px #9FB9C1 solid;
-    border-radius: 10px;
+    width: 200px;
+    height: 100px;
 }
 
-#introHeader {
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 25px;
-    margin-left: auto;
-    margin-right: auto;
+#skylinkLogo {
+    width: 151px;
+    height: 51px;
+    bottom: 10px;
+    right: 10px;
+    position: fixed;
+}
+
+#builtWithText {
+    position: fixed;
+    right: 15px;
+    bottom: 50px;
+    font-family:  "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-size: 15px;
+    color: white;
+    
+}
+
+#logoContainer {
+    position: fixed;
+    left: 16.5%;
+    width: 400px;
+    height: 320px;
+    margin-top: 0;
+    padding-top: 0;
+}
+
+#appDemoContainer {
+    position: fixed;
+    right: 20%;
+    top: 10%;
+    width: 233px;
+    height: 476px;
+    
+}
+
+#appStoreContainer {
+    position: fixed;
+    right: 24.5%;
+    bottom: 12%;
+    width: 111px;
+    height: 37px;
+}
+
+#textContainer {
+    position: fixed;
+    left: 17.5%;
+    top: 36%;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-size: 15px;
+    color: white;
+}
+
+#macbookContainer {
+    position: fixed;
+    top: 50%;
+    left: 16%;
+    width: 158px;
+    height: 95px;
+}
+
+#localTextContainer {
+    width: 150px;
     text-align: center;
-    font-size: 2.0em;
+    position: fixed;
+    bottom: 30%;
+    left: 16.5%;
+    color: #CCCCCC;
+    font-family: "HelveticaNeue-Thin";
+    font-size: 13px;
+}
+
+#remoteTextContainer {
+    width: 150px;
+    text-align: center;
+    position: fixed;
+    bottom: 30%;
+    left: 34%;
+    color: #CCCCCC;
+    font-family: "HelveticaNeue-Thin";
+    font-size: 13px;
+}
+
+#macContainer {
+    position: fixed;
+    top: 47%;
+    left: 34%;
+    width: 145px;
+    height: 118px;
+}
+
+#localButton {
+    position: fixed;
+    bottom:20%;
+    left: 18.5%;
+}
+
+#remoteButton {
+    position: fixed;
+    bottom:20%;
+    left: 36.5%;
+}
+
+.connectButton {
+    width: 90px;
+    height: 35px;
+    background-color: #202020;
+    moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border: 1px solid white;
+    color: white;
+    font-family: "HelveticaNeue-Light"
+    
+}
+
+.connectButton:hover {
     color: #1CA1CA;
-    font-family: HelveticaNeue;
-    font-weight: bold;
+    border: 1px solid #1CA1CA;
 }
-
-#introFooter {
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 25px;
-    margin-left:auto;
-    margin-right:auto;
-}
-
-#optionContainer {
-    background-color: transparent;
-    width: 100%;
-    height: 250px;
-    position: absolute;
-    top:0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
-}
-
-#localContainer {
-    background-color: transparent;
-    position: absolute;
-    top:0;
-    bottom: 0;
-    left: 25px;
-    margin: auto;
-    width: 200px;
-    height: 200px;
-}
-
-#localImage {
-    width:160px;
-    height:100px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-#remoteImage {
-    width:113px;
-    height:100px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-#remoteContainer {
-    background-color: transparent;
-    position: absolute;
-    top:0;
-    bottom: 0;
-    right: 25px;
-    margin: auto;
-    width: 200px;
-    height: 200px;
-}
-
-.round-button {
-	width:15%;
-    margin: 0 auto;
-}
-.round-button-circle {
-	width: 100%;
-	height:0;
-	padding-bottom: 100%;
-    border-radius: 50%;
-	border:1px solid #cfdcec;
-    overflow:hidden;
     
-    background: #E8F6FA; 
-    box-shadow: 0 0 3px gray;
-}
-
-.round-button-circle:hover {
-	background:#FFFFFF;
-}
-
-.round-button a {
-    display:block;
-	width:100%;
-	padding-top:50%;
-    padding-bottom:50%;
-	line-height:1em;
-	margin-top:-0.5em;
-    
-	text-align:center;
-	color:#202020;
-    font-family:HelveticaNeue;
-    font-size:1.0em;
-    font-weight:bold;
-    text-decoration:none;
-}
