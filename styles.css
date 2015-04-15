@@ -3,7 +3,7 @@ body {
 }
 
 #introContainer {
-    background-color: #1CA1CA;
+    background-color: #fff;
     width: 520px;
     height: 480px;
     
@@ -27,7 +27,7 @@ body {
     margin-right: auto;
     text-align: center;
     font-size: 2.0em;
-    color: white;
+    color: #1CA1CA;
     font-family: HelveticaNeue;
     font-weight: bold;
 }
