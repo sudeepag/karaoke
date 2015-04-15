@@ -1,0 +1,151 @@
+<html>
+
+    <head>
+        <script src="spin.js"></script>
+        <script src="http://cdn.temasys.com.sg/skylink/skylinkjs/0.5.x/skylink.complete.js"></script>
+        <link rel="stylesheet" type="text/css" href="styles.css">
+        <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,100italic' rel='stylesheet' type='text/css'>
+    </head>
+
+    <body>
+        <img src="https://cloud.githubusercontent.com/assets/11940172/7152236/5c3449f6-e36a-11e4-966f-3326a276b346.png" id="topLogoContainer">
+        <div id="deviceContainer">
+            <img src="https://cloud.githubusercontent.com/assets/11940172/7151804/b026055c-e362-11e4-81c0-a4dbd8575ad8.png" class="deviceMac">
+        </div>
+        <div id="loadingContainer">
+        </div>
+        <div id="parentSongContainer">
+            <div id="songContainerHeader">Pick a song.</div>
+            <table>
+                <tr>
+                    <td>
+                        <a href="http://google.com">
+                        <img src="https://cloud.githubusercontent.com/assets/11940172/7154190/eccc0ce0-e385-11e4-89d6-ca6a7263f6bd.png" class="albumArt">
+                        <div class="songTitle">This Love</div>
+                        <div class="songArtist">Maroon 5</div>
+                        </a>
+                    </td>
+                    <td>
+                        <img src="https://cloud.githubusercontent.com/assets/11940172/7154223/3705123e-e386-11e4-9b83-05ad9edeff7b.png" class="albumArt">
+                        <div class="songTitle">Blank Space</div>
+                        <div class="songArtist">Taylor Swift</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="https://cloud.githubusercontent.com/assets/11940172/7154387/39f12aa8-e388-11e4-9a8f-507f94dfcf31.jpg" class="albumArt">
+                        <div class="songTitle">Discipline</div>
+                        <div class="songArtist">Nine Inch Nails</div>
+                    </td>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
+        
+        
+        <script>
+            
+            // VARIABLES
+            var roomName = 'karaoke' + myIP().substring(1).replace(/\./g,'');
+            var defaultUsername = 'Computer';
+            var remotePeerArray = [];
+            var lastMargin = 120;
+            
+            
+            // remove song container for now
+            var songContainer = document.getElementById('parentSongContainer');
+            document.body.removeChild(songContainer);
+            
+            
+            
+            window.onload = function() {
+                // Create the loader
+                var spinner = new Spinner({
+                   lines: 12, // The number of lines to draw
+                   length: 7, // The length of each line
+                   width: 3, // The line thickness
+                   radius: 10, // The radius of the inner circle
+                   color: '#1ca1ca', // #rbg or #rrggbb
+                   speed: 1, // Rounds per second
+                   trail: 100, // Afterglow percentage
+                   shadow: true // Whether to render a shadow
+                }).spin(document.getElementById("loadingContainer"));
+                
+                
+                var loadingContainer = document.getElementById('loadingContainer');
+                var loadingText = document.createElement('div');
+                loadingText.setAttribute('id','loadingText');
+                loadingText.innerHTML = 'Looking for devices...';
+                loadingContainer.appendChild(loadingText);
+                
+            }
+            
+            
+            
+            // SKYLINK
+            var skylink = new Skylink();
+
+            skylink.init({
+                apiKey: 'c0c61c1d-41db-4cc3-b841-f35797a9597f',
+                defaultRoom: roomName
+            });
+            skylink.joinRoom({
+                audio: {
+                    mute: true
+                },
+                video: false,
+                userData: defaultUsername
+            });
+            skylink.on('mediaAccessSuccess', function(stream) {
+                // media access success
+            });
+            skylink.on('peerJoined', function(peerId, peerInfo, isSelf) {
+
+                if (isSelf) return;
+
+                // Add peer's ID to the end of remote peer array
+                remotePeerArray[remotePeerArray.length] = peerId;
+                console.log('peer joined:'+peerId);
+
+            });
+            
+            
+            
+            
+            // HELPER FUNCTIONS
+            function myIP() {
+                if (window.XMLHttpRequest) xmlhttp = new XMLHttpRequest();
+                else xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+
+                xmlhttp.open("GET","http://api.hostip.info/get_html.php",false);
+                xmlhttp.send();
+
+                hostipInfo = xmlhttp.responseText.split("\n");
+
+                for (i=0; hostipInfo.length >= i; i++) {
+                    ipAddress = hostipInfo[i].split(":");
+                if ( ipAddress[0] == "IP" ) return ipAddress[1];
+                }
+
+                return false;
+            }
+            
+            function addDevice() {
+                var device = document.createElement('img');
+                device.setAttribute('src', 'https://cloud.githubusercontent.com/assets/11940172/7155655/f951a7b0-e392-11e4-991e-5bcb5ddc0495.png');
+                device.setAttribute('class', 'devicePhone');
+                device.style.marginLeft = 20 + lastMargin + 'px';
+                lastMargin += 60;
+                var deviceContainer = document.getElementById('deviceContainer');
+                deviceContainer.appendChild(device);
+                
+                deviceContainer.style.width = deviceContainer.offsetWidth + 60;
+            }
+            
+            
+            
+        </script>
+        
+    </body>
+
+</html>
