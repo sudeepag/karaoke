@@ -365,11 +365,29 @@ td:hover {
     margin-top: 5px;
 }
 
+.playButtonInactive {
+    float: left;
+    background: url('https://cloud.githubusercontent.com/assets/11940172/7225144/dffce1c4-e76d-11e4-8553-ee58983d0100.png') no-repeat;
+    background-size: 40px 40px;
+    width: 40px;
+    height: 40px;
+    margin-top: 5px;
+}
+
 .pauseButton {
     float: right;
     background: url('https://cloud.githubusercontent.com/assets/11940172/7174091/8dea2aea-e434-11e4-9d04-4b3c76a005fc.png') no-repeat;
     background-size: 40px 40px;
     cursor: pointer;
+    width: 40px;
+    height: 40px;
+    margin-top: 5px;
+}
+
+.pauseButtonInactive {
+    float: right;
+    background: url('https://cloud.githubusercontent.com/assets/11940172/7225181/360a6320-e76e-11e4-9225-e86a4a06f25c.png') no-repeat;
+    background-size: 40px 40px;
     width: 40px;
     height: 40px;
     margin-top: 5px;
