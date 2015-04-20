@@ -29,27 +29,38 @@ body {
 }
 
 #logoContainer {
-    position: fixed;
-    left: 16.5%;
+    display: block;
+    margin-left: 145px;
     width: 400px;
     height: 320px;
-    margin-top: 0;
-    padding-top: 0;
+}
+
+#parentParentContainer {
+    margin: 0 auto;
+    width: 1024px;
+    height: 768px;
+}
+
+#parentAppContainer {
+    display: block;
+    margin-left: 700px;
+    margin-top: -250px;
+    width: 233px;
+    height: 550px;
 }
 
 #appDemoContainer {
-    position: fixed;
-    right: 20%;
-    top: 10%;
+    margin: 0 auto;
     width: 233px;
     height: 476px;
     
 }
 
 #appStoreContainer {
-    position: fixed;
-    right: 24.5%;
-    bottom: 12%;
+    display: block;
+    margin-top: 15px;
+    margin-left: auto;
+    margin-right: auto;
     width: 111px;
     height: 37px;
 }
@@ -63,54 +74,72 @@ body {
     color: white;
 }
 
+#parentOptionsContainer {
+    display: block;
+    margin-top: -300px;
+    margin-left: 150px;
+    width: 390px;
+    height: 308px;
+}
+
+#parentLocalContainer {
+    display: block;
+    float: left;
+}
+
+#parentRemoteContainer {
+    display: block;
+    float: right;
+}
+
 #macbookContainer {
-    position: fixed;
-    top: 50%;
-    left: 16%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
     width: 158px;
     height: 95px;
 }
 
 #localTextContainer {
-    width: 150px;
+    display: block;
+    margin-top: 23px;
+    width: 160px;
     text-align: center;
-    position: fixed;
-    bottom: 30%;
-    left: 16.5%;
     color: #CCCCCC;
     font-family: "HelveticaNeue-Thin";
     font-size: 13px;
 }
 
 #remoteTextContainer {
-    width: 150px;
+    display: block;
+    margin-top: 10px;
+    width: 160px;
     text-align: center;
-    position: fixed;
-    bottom: 30%;
-    left: 34%;
     color: #CCCCCC;
     font-family: "HelveticaNeue-Thin";
     font-size: 13px;
 }
 
 #macContainer {
-    position: fixed;
-    top: 47%;
-    left: 34%;
+    display: block;
+    margin: 0 auto;
     width: 145px;
     height: 118px;
 }
 
 #localButton {
-    position: fixed;
-    bottom:20%;
-    left: 18.5%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 37px;
 }
 
 #remoteButton {
-    position: fixed;
-    bottom:20%;
-    left: 36.5%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 37px;
 }
 
 .connectButton {
@@ -126,23 +155,22 @@ body {
 }
 
 .connectButton:hover {
-    color: #1CA1CA;
-    border: 1px solid #1CA1CA;
+    color: #23b5e1;
+    border: 1px solid #23b5e1;
     
 }
 
 #textField {
-    background-color: #575757;
-    border: 0px;
-    -moz-border-radius: 3px;
-    -webkit-border-radius: 3px;
-    position: fixed;
-    left: 34%;
-    bottom: 20%;
+    display: block;
+    margin-top: -97px;
     width: 160px;
     height: 30px;
     padding-left: 10px;
     padding-right: 10px;
+    background-color: #575757;
+    border: 0px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
     color: white;
 }
 
@@ -153,7 +181,6 @@ body {
     margin: auto;
     width: 100px;
     height: 100px;
-    padding-bottom: 10px;
 }
 
 .songTitle {
@@ -161,6 +188,7 @@ body {
     color: black;
     font-size: 14px;
     width: 100%;
+    padding-top: 10px;
     text-align: center;
 }
 
@@ -185,13 +213,14 @@ body {
     position: relative;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 30px;
     width: 140px;
     height: 100px;
     overflow: auto;
 }
 
 .deviceMac {
-    position: fixed;
+    position: absolute;
     width: 95px;
     height: 57px;
     margin-top: 20px;
@@ -199,7 +228,7 @@ body {
 }
 
 .devicePhone {
-    position: fixed;
+    position: absolute;
     width: 38px;
     height: 76px;
     margin-top: 10px;
@@ -225,11 +254,23 @@ body {
 #songContainerHeader {
     display: block;
     margin: 0 auto;
+    margin-top: 30px;
     width: 500px;
     text-align: center;
+}
+
+.songHeader {
     color: white;
     font-family: 'Lato', sans-serif;
     font-weight: 300;
+    font-size: 18px;
+}
+
+.songHeaderSubtitle {
+    padding-top: 5px;
+    color: white;
+    font-family: 'Lato', sans-serif;
+    font-weight: 100;
     font-size: 16px;
 }
     
@@ -241,6 +282,12 @@ body {
     height: 400px;
 }
 
+#startButton {
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 30px;
+}
+
 table {
     display: block;
     margin: 0 auto;
@@ -249,14 +296,13 @@ table {
 }
 
 tr {
-    background-color: rgba(255, 255, 255, 0.6);
     border-radius: 10px;
     width:300px;
     height: 175px;
     
 }
 td {
-    background-color: rgba(233, 250, 255, 0.6);
+    background-color: #e0f4fb;
     border-radius: 10px;
     width:300px;
     height: 150px;
@@ -268,5 +314,240 @@ td {
 }
 
 td:hover {
-    background-color: #e9faff;
+    background-color: #a5e1f3;
+}
+
+.selectedTd {
+    background-color: #54c5e8;
+}
+
+/*PLAYER*/
+
+.container {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    background-color: #e0f4fb;
+    width: 640px;
+    height: 200px;
+    text-align: center;
+}
+
+.containerHeader {
+    padding-top: 10px;
+    color: black;
+    font-family: "HelveticaNeue-CondensedBold", "Helvetica Neue", sans-serif;
+    font-size: 25px;
+}
+
+.controllerContainer {
+    margin: 0 auto;
+    width: 80%;
+    height: 50px;
+}
+
+.buttonsContainer {
+    margin: 0 auto;
+    width: 20%;
+    height: 40px;
+}
+
+.playButton {
+    float: left;
+    background: url('https://cloud.githubusercontent.com/assets/11940172/7174092/8dec912c-e434-11e4-8ce1-c1e4da951ed3.png') no-repeat;
+    background-size: 40px 40px;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    margin-top: 5px;
+}
+
+.pauseButton {
+    float: right;
+    background: url('https://cloud.githubusercontent.com/assets/11940172/7174091/8dea2aea-e434-11e4-9d04-4b3c76a005fc.png') no-repeat;
+    background-size: 40px 40px;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    margin-top: 5px;
+}
+
+.muteButtonUnfilled {
+    position: absolute;
+    margin-left: 350px;
+    margin-top: -28px;
+    background: url('https://cloud.githubusercontent.com/assets/11940172/7178448/76bbaae2-e461-11e4-8aa9-5df7e41135c2.png') no-repeat;
+    background-size: 30px 30px;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+}
+
+.muteButtonFilled {
+    position: absolute;
+    margin-left: 350px;
+    margin-top: -28px;
+    background: url('https://cloud.githubusercontent.com/assets/11940172/7178055/6c536138-e45e-11e4-97d8-0dcc3b2b3187.png') no-repeat;
+    background-size: 30px 30px;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+}
+
+.thumbsUpButton {
+    position: absolute;
+    margin-left: 140px;
+    margin-top: 8px;
+    background: url('https://cloud.githubusercontent.com/assets/11940172/7178098/a8098f86-e45e-11e4-8d13-a1d6d85e6e86.png') no-repeat;
+    background-size: 30px 30px;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+}
+
+.volumeLabel {
+    position: absolute;
+    margin-left: 237px;
+    margin-top: 37px;
+    color: black;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue", sans-serif;
+    font-size: 10px;
+}
+
+.trackLabel {
+    position: absolute;
+    margin-left: 50px;
+    color: black;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue", sans-serif;
+    font-size: 10px;
+}
+
+.vocalLabel {
+    position: absolute;
+    margin-left: 430px;
+    color: black;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue", sans-serif;
+    font-size: 10px;
+}
+
+input[type='range'] {
+    -webkit-appearance: none;
+    background-color: rgba(0,0,0,0);
+    height: 20px;
+    border: 1px solid #444;
+    border-radius: 15px;
+    padding: 0 3px;
+    margin-top: 15px;
+}
+
+input[type='range']::-webkit-slider-thumb {
+    vertical-align: middle;
+    -webkit-appearance: none;
+    background-color: #2b2b2b;
+    width: 16px;
+    height: 16px;
+    border-radius: 16px;
+}
+
+#lyricsContainer {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -10px;
+    width: 535px;
+    height: 80px;
+}
+
+#topLine {
+    color: grey;
+    text-align: center;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue", sans-serif;
+    font-size: 14px;
+}
+
+#middleLine {
+    color: black;
+    text-align: center;
+    font-family: "HelveticaNeue-Medium", "Helvetica Neue", sans-serif;
+    font-size: 17px;
+}
+
+#bottomLine {
+    color: grey;
+    text-align: center;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue", sans-serif;
+    font-size: 14px;
+}
+
+.amplitudeContainer {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    background-color: rgba(0,0,0,0);
+    border: 1px solid #444;
+    border-radius: 5px;
+    width: 535px;
+    height: 50px;
+}
+
+.amplitudeBar {
+    background-color: #444;
+    border-radius: 5px;
+    height: 50px;
+    width: 0px;
+    transition: width 0.05s;
+}
+
+#endSongContainer {
+    margin: 0 auto;
+    width: 200px;
+    height: 80px;
+    cursor: pointer;
+}
+
+#backContainer {
+    float: left;
+    width: 80px;
+    height: 70px;
+    cursor: pointer;
+}
+
+#replayContainer {
+    float: right;
+    width: 80px;
+    height: 70px;
+}
+
+.replayButton {
+    background: url('https://cloud.githubusercontent.com/assets/11940172/7197352/9ad6f4b6-e512-11e4-8260-fb83fc423be0.png') no-repeat;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    background-size: 30px 30px;
+    width: 30px;
+    height: 30px;
+}
+
+.backButton {
+    background: url('https://cloud.githubusercontent.com/assets/11940172/7197359/af511e26-e512-11e4-9be9-da5db9c06593.png') no-repeat;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    background-size: 30px 30px;
+    width: 30px;
+    height: 30px;
+}
+
+.endSongButtonLabel {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    color: black;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue", sans-serif;
+    font-size: 12px;
 }
