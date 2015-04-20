@@ -395,6 +395,9 @@
             }
             
             function playButtonClicked() {
+                
+                document.getElementById('playButton').setAttribute('class', 'playButtonInactive');
++               document.getElementById('pauseButton').setAttribute('class', 'pauseButton');
             
                 if (isStartingSong) {
                     // Send song data to devices
@@ -416,6 +419,8 @@
             }
             
             function pauseButtonClicked() {
+                document.getElementById('pauseButton').setAttribute('class', 'pauseButtonInactive');
++               document.getElementById('playButton').setAttribute('class', 'playButton');
                 bgTrackAudio.pause();
                 bgVocalAudio.pause();
                 skylink.sendMessage('pause');
@@ -524,11 +529,13 @@
                 
                 // Create buttons
                 var playButton = document.createElement('div');
+                playButton.setAttribute('id', 'playButton');
                 playButton.setAttribute('class', 'playButton');
                 buttonsContainer.appendChild(playButton);
                 addListener(playButton, 'click', playButtonClicked);
                 
                 var pauseButton = document.createElement('div');
+                pauseButton.setAttribute('id', 'pauseButton');
                 pauseButton.setAttribute('class', 'pauseButton');
                 buttonsContainer.appendChild(pauseButton);
                 addListener(pauseButton, 'click', pauseButtonClicked);
