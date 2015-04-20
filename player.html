@@ -395,6 +395,9 @@
             }
             
             function playButtonClicked() {
+                
+                document.getElementById('pauseButton').setAttribute('class', 'pauseButton');
+                document.getElementById('playButton').setAttribute('class', 'playButtonInactive');
             
                 if (isStartingSong) {
                     // Send song data to devices
@@ -416,6 +419,8 @@
             }
             
             function pauseButtonClicked() {
+                document.getElementById('playButton').setAttribute('class', 'playButton');
+                document.getElementById('pauseButton').setAttribute('class', 'pauseButtonInactive');
                 bgTrackAudio.pause();
                 bgVocalAudio.pause();
                 skylink.sendMessage('pause');
