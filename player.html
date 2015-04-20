@@ -529,11 +529,13 @@
                 
                 // Create buttons
                 var playButton = document.createElement('div');
+                playButton.setAttribute('id', 'playButton');
                 playButton.setAttribute('class', 'playButton');
                 buttonsContainer.appendChild(playButton);
                 addListener(playButton, 'click', playButtonClicked);
                 
                 var pauseButton = document.createElement('div');
+                pauseButton.setAttribute('id', 'pauseButton');
                 pauseButton.setAttribute('class', 'pauseButton');
                 buttonsContainer.appendChild(pauseButton);
                 addListener(pauseButton, 'click', pauseButtonClicked);
