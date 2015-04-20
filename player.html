@@ -105,7 +105,7 @@
                 
                 // Get lyrics from json
                 var HTTPReq = new XMLHttpRequest();
-                HTTPReq.open("GET", 'lyrics.json', false);
+                HTTPReq.open("GET", 'http://sudeepag.github.io/karaoke/json/lyrics.json', false);
                 HTTPReq.send(null);
                 lyricsData = JSON.parse(HTTPReq.responseText);
                 
