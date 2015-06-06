@@ -1,0 +1,116 @@
+<html>
+
+    <head>
+        <title>KARAOKEmic</title>
+        <script src="http://cdn.temasys.com.sg/skylink/skylinkjs/0.5.x/skylink.complete.js"></script>
+        <link rel="stylesheet" type="text/css" href="http://sudeepag.github.io/karaoke/css/styles.css">
+    </head>
+
+    <body>
+        <!--<div id="textContainer">Sing along with your friends from across the world.<br><br>In <i>real time</i>.</div>-->
+        <div id="parentParentContainer">
+            <img src="https://cloud.githubusercontent.com/assets/11940172/7152236/5c3449f6-e36a-11e4-966f-3326a276b346.png" id="logoContainer">
+            <div id="parentAppContainer">
+                <img src="https://cloud.githubusercontent.com/assets/11940172/7151640/f6b85e28-e35f-11e4-8c5d-56d5764b278c.png" id="appDemoContainer">
+                <a href="http://google.com"><img src="https://cloud.githubusercontent.com/assets/11940172/7152122/f210beda-e367-11e4-96ea-157f908b151b.png" id="appStoreContainer"></a>
+            </div>
+            <div id="parentOptionsContainer">
+                <div id="parentLocalContainer">
+                    <img src="https://cloud.githubusercontent.com/assets/11940172/7151804/b026055c-e362-11e4-81c0-a4dbd8575ad8.png" id="macbookContainer">
+                    <div id="localTextContainer">Connect to devices on a local network.</div>
+                    <button class="connectButton" id="localButton">Connect</button>
+                </div>
+                <div id="parentRemoteContainer">
+                    <img src="https://cloud.githubusercontent.com/assets/11940172/7151805/b027e9a8-e362-11e4-8441-16b0519c7949.png" id="macContainer">
+                    <div id="remoteTextContainer">Create a global karaoke room.</div>
+                    <button class="connectButton" id="remoteButton">Create</button>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+        <div id="builtWithContainer">
+            <div id="builtWithText">BUILT WITH</div>
+            <a href="http://skylink.io/"><img src="https://cloud.githubusercontent.com/assets/11940172/7151530/059e7be0-e35e-11e4-8cf5-9a1f326a2ba4.png" id="skylinkLogo"></a>
+        </div>
+        
+        <script>
+            
+            var numOfClicks = 0;
+            
+            function addListener(element, eventName, handler) {
+                if (element.addEventListener) {
+                    element.addEventListener(eventName, handler, false);
+                }
+                else if (element.attachEvent) {
+                    element.attachEvent('on' + eventName, handler);
+                }
+                else {
+                    element['on' + eventName] = handler;
+                }
+            }
+
+            function removeListener(element, eventName, handler) {
+              if (element.addEventListener) {
+                element.removeEventListener(eventName, handler, false);
+              }
+              else if (element.detachEvent) {
+                element.detachEvent('on' + eventName, handler);
+              }
+              else {
+                element['on' + eventName] = null;
+              }
+            }
+            
+            addListener(document.getElementById('localButton'), 'click', localButtonClicked);
+            addListener(document.getElementById('remoteButton'), 'click', remoteButtonClicked);
+            
+            function localButtonClicked() {
+                open('player.html', '_self');
+            }
+            
+            function getRoomName() {
+                var textField = document.getElementById('textField');
+                return encodeURI(textField.value);
+            }
+            
+            function remoteButtonClicked() {
+                
+                numOfClicks++;
+                
+                if (numOfClicks == 1) {
+                    var remoteButton = document.getElementById('remoteButton');
+                    remoteButton.style.marginTop = (remoteButton.style.marginTop + 100) + 'px';
+                    remoteButton.value = "Connect";
+                    var textField = document.createElement('input');
+                    textField.setAttribute('id', 'textField');
+                    textField.setAttribute('placeholder', 'Room name');
+                    document.getElementById('parentRemoteContainer').appendChild(textField);
+                
+                    textField.focus();
+                }
+                else {
+                    // Launch the next page
+                    var textField = document.getElementById('textField');
+                    console.log(textField.value);
+                    
+                    var roomName = getRoomName();
+                    
+                    if (roomName == '') {
+                        alert('Please enter a valid room name.');
+                    }
+                    else {
+                        var newURL = 'player.html?' + roomName;
+                        open(newURL, '_self');
+                    }
+                }
+                
+            }
+            
+        </script>
+        
+        
+    </body>
+
+</html>
