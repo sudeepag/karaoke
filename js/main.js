@@ -1,6 +1,5 @@
 // VARIABLES
-getIP()
-//var roomName = 'karaoke' + myIP().substring(1).replace(/\./g,'');
+var roomName = 'karaoke' + myIP().substring(1).replace(/\./g,'');
 var defaultUsername = 'Computer';
 var remotePeerArray = [];
 var lastMargin = 120;
@@ -195,16 +194,21 @@ function removeListener(element, eventName, handler) {
   }
 }
 
-function getIP() {
-    if (window.XMLHttpRequest) xmlhttp = new XMLHttpRequest();
-    else xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-
-    xmlhttp.open("GET","http://ipinfo.io",false);
-    xmlhttp.send();
-
-    hostipInfo = xmlhttp.responseText.split("\n");
-
-    console.log(hostipInfo);
+function myIP() {
+     if (window.XMLHttpRequest) xmlhttp = new XMLHttpRequest();
+     else xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+ 
+     xmlhttp.open("GET","http://api.hostip.info/get_html.php",false);
+     xmlhttp.send();
+ 
+     hostipInfo = xmlhttp.responseText.split("\n");
+ 
+     for (i=0; hostipInfo.length >= i; i++) {
+        ipAddress = hostipInfo[i].split(":");
+        if ( ipAddress[0] == "IP" ) return ipAddress[1];
+     }
+ 
+     return false;
 }
 
 function fadeOut(el){
