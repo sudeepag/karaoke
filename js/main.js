@@ -1,5 +1,6 @@
 // VARIABLES
-var roomName = 'karaoke' + myIP().substring(1).replace(/\./g,'');
+getIP()
+//var roomName = 'karaoke' + myIP().substring(1).replace(/\./g,'');
 var defaultUsername = 'Computer';
 var remotePeerArray = [];
 var lastMargin = 120;
@@ -194,21 +195,16 @@ function removeListener(element, eventName, handler) {
   }
 }
 
-function myIP() {
+function getIP() {
     if (window.XMLHttpRequest) xmlhttp = new XMLHttpRequest();
     else xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
 
-    xmlhttp.open("GET","http://api.hostip.info/get_html.php",false);
+    xmlhttp.open("GET","http://ipinfo.io",false);
     xmlhttp.send();
 
     hostipInfo = xmlhttp.responseText.split("\n");
 
-    for (i=0; hostipInfo.length >= i; i++) {
-        ipAddress = hostipInfo[i].split(":");
-    if ( ipAddress[0] == "IP" ) return ipAddress[1];
-    }
-
-    return false;
+    console.log(hostipInfo);
 }
 
 function fadeOut(el){
@@ -744,16 +740,16 @@ function createBackgroundAudio(songSelected) {
     var trackSourceNode = context.createMediaElementSource(bgTrackAudio);
     
     if (songSelected == 'This Love') {
-        bgVocalAudio.src = "http://sudeep.sg/karaokemic/ThisLove_vocals.mp3";
-        bgTrackAudio.src = "http://sudeep.sg/karaokemic/ThisLove_novocals.mp3";
+        bgVocalAudio.src = "http://sudeep.co/misc/ThisLove_vocals.mp3";
+        bgTrackAudio.src = "http://sudeep.co/misc/ThisLove_novocals.mp3";
         nowPlaying = 'This Love - Maroon 5';
         cues = lyricsData.songs[0].cues;
         lyrics = lyricsData.songs[0].lyrics;
         cueOffset = 0.0;
     }
     else if (songSelected == 'Blank Space') {
-        bgVocalAudio.src = "http://sudeep.sg/karaokemic/blankspace_withVocals.mp3";
-        bgTrackAudio.src = "http://sudeep.sg/karaokemic/blankSpace.mp3";
+        bgVocalAudio.src = "http://sudeep.co/misc/blankspace_withVocals.mp3";
+        bgTrackAudio.src = "http://sudeep.co/misc/blankSpace.mp3";
         nowPlaying = 'Blank Space - Taylor Swift';
         cues = lyricsData.songs[1].cues;
         lyrics = lyricsData.songs[1].lyrics;
